@@ -4,14 +4,15 @@ enum TaskStatus {
   NOT_STARTED
 }
 
-type Task @model @auth(rules: [{ allow: public }]) {
+type Task @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String!
-  session: Int!
+  sessions: Int!
   remainingSession: Int
   longBreak: Int!
   shortBreak: Int!
   startDate: AWSDateTime!
+  startTime: AWSDateTime!
   startAt: AWSDateTime
   status: TaskStatus
 }

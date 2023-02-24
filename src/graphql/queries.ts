@@ -1,5 +1,5 @@
 /* tslint:disable */
-
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
 export const getTask = /* GraphQL */ `
@@ -7,11 +7,12 @@ export const getTask = /* GraphQL */ `
     getTask(id: $id) {
       id
       title
-      session
+      sessions
       remainingSession
       longBreak
       shortBreak
       startDate
+      startTime
       startAt
       status
       createdAt
@@ -29,11 +30,12 @@ export const listTasks = /* GraphQL */ `
       items {
         id
         title
-        session
+        sessions
         remainingSession
         longBreak
         shortBreak
         startDate
+        startTime
         startAt
         status
         createdAt

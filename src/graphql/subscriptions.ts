@@ -1,5 +1,5 @@
 /* tslint:disable */
-
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
 export const onCreateTask = /* GraphQL */ `
@@ -7,11 +7,12 @@ export const onCreateTask = /* GraphQL */ `
     onCreateTask(filter: $filter) {
       id
       title
-      session
+      sessions
       remainingSession
       longBreak
       shortBreak
       startDate
+      startTime
       startAt
       status
       createdAt
@@ -24,11 +25,12 @@ export const onUpdateTask = /* GraphQL */ `
     onUpdateTask(filter: $filter) {
       id
       title
-      session
+      sessions
       remainingSession
       longBreak
       shortBreak
       startDate
+      startTime
       startAt
       status
       createdAt
@@ -41,11 +43,12 @@ export const onDeleteTask = /* GraphQL */ `
     onDeleteTask(filter: $filter) {
       id
       title
-      session
+      sessions
       remainingSession
       longBreak
       shortBreak
       startDate
+      startTime
       startAt
       status
       createdAt
