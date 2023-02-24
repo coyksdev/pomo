@@ -3,5 +3,6 @@
   "extends": "expo/tsconfig.base",
   "include": [
     "src/**/*",
+    "declarations.d.ts"
   ]
 }

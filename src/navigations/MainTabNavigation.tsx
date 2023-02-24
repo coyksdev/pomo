@@ -4,7 +4,7 @@ import {
   BottomTabBarButtonProps,
 } from '@react-navigation/bottom-tabs';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {HStack} from 'native-base';
+import {HStack, useTheme} from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 
 import HomeOutline from '../../assets/svgs/Home-Outline.svg';
@@ -57,6 +57,8 @@ function CreateTaskButton(props: BottomTabBarButtonProps) {
 }
 
 function MainTabNavigation() {
+  const theme = useTheme();
+
   const navigation =
     useNavigation<NativeStackNavigationProp<RootNavigationParamsList>>();
 
@@ -66,7 +68,7 @@ function MainTabNavigation() {
       screenOptions={({route}) => ({
         headerShown: false,
         // eslint-disable-next-line react/no-unstable-nested-components
-        tabBarIcon: ({focused, color, size}) => {
+        tabBarIcon: ({}) => {
           if (route.name === 'HomeScreen') {
             return <HomeOutline />;
           }
@@ -83,6 +85,8 @@ function MainTabNavigation() {
             return <ProfileOutline />;
           }
         },
+        tabBarActiveTintColor: theme.colors.primary[500],
+        tabBarInactiveTintColor: theme.colors.gray[400],
       })}>
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
       <Tab.Screen name="TasksScreen" component={TasksScreen} />

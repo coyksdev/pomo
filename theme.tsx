@@ -1,6 +1,20 @@
 import {extendTheme} from 'native-base';
 
 export const theme = extendTheme({
+  colors: {
+    primary: {
+      50: '#ffeeef',
+      100: '#ffddde',
+      200: '#ffcdce',
+      300: '#ffbcbe',
+      400: '#ffabae',
+      500: '#ff9a9d',
+      600: '#ff898d',
+      700: '#ff797d',
+      800: '#ff686c',
+      900: '#ff575c',
+    },
+  },
   fontConfig: {
     Urbanist: {
       100: {

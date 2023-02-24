@@ -4,8 +4,7 @@ import {Amplify} from 'aws-amplify';
 import * as Font from 'expo-font';
 import {NativeBaseProvider} from 'native-base';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {QueryClient} from 'react-query';
-import {QueryClientProvider} from 'react-query';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 
 import RootNavigation from './src/navigations/RootNavigation';
 import {theme} from './theme';

@@ -22,7 +22,7 @@ export default function TaskList({tasks}: {tasks: Task[]}) {
             <Text fontSize={20} fontWeight={'bold'}>
               {item.title}
             </Text>
-            <Text fontSize={14}>{`${item.session * 25} minutes`}</Text>
+            <Text fontSize={14}>{`${item.sessions * 25} minutes`}</Text>
           </VStack>
           <IconButton icon={<Play />} />
         </HStack>

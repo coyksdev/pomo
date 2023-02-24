@@ -1,5 +1,5 @@
 import {API, graphqlOperation} from 'aws-amplify';
-import {useQuery, UseQueryResult} from 'react-query';
+import {useQuery, UseQueryResult} from '@tanstack/react-query';
 import {listTasks} from '../graphql/queries';
 import {GraphQLQuery} from '@aws-amplify/api';
 import {ListTasksQuery, Task} from '../API';
