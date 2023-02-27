@@ -1,0 +1,2 @@
+export const TASK_DURATION_MINS = 25;
+export const TASK_DURATION_SECS = TASK_DURATION_MINS * 60;

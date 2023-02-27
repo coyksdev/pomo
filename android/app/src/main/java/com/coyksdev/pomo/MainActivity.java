@@ -1,4 +1,4 @@
-package com.pomo;
+package com.coyksdev.pomo;
 
 import android.os.Build;
 import android.os.Bundle;

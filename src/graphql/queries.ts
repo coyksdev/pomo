@@ -8,12 +8,14 @@ export const getTask = /* GraphQL */ `
       id
       title
       sessions
-      remainingSession
+      remainingSessions
       longBreak
       shortBreak
       startDate
       startTime
       startAt
+      breakAt
+      remainingSeconds
       status
       createdAt
       updatedAt
@@ -31,12 +33,14 @@ export const listTasks = /* GraphQL */ `
         id
         title
         sessions
-        remainingSession
+        remainingSessions
         longBreak
         shortBreak
         startDate
         startTime
         startAt
+        breakAt
+        remainingSeconds
         status
         createdAt
         updatedAt

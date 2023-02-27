@@ -31,7 +31,7 @@ function DateTimePicker({
       return format(value, 'dd/MM/yyyy');
     }
 
-    return format(value, 'HH:mm aaa');
+    return format(value, 'hh:mm aaa');
   };
 
   return (

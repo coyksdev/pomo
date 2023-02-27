@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Amplify} from 'aws-amplify';
-
 import * as Font from 'expo-font';
 import {NativeBaseProvider} from 'native-base';
 import {SafeAreaView} from 'react-native-safe-area-context';

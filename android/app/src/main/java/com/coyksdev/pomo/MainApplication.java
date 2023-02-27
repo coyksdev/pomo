@@ -1,4 +1,4 @@
-package com.pomo;
+package com.coyksdev.pomo;
 
 import android.app.Application;
 import android.content.res.Configuration;

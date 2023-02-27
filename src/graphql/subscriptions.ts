@@ -8,12 +8,14 @@ export const onCreateTask = /* GraphQL */ `
       id
       title
       sessions
-      remainingSession
+      remainingSessions
       longBreak
       shortBreak
       startDate
       startTime
       startAt
+      breakAt
+      remainingSeconds
       status
       createdAt
       updatedAt
@@ -26,12 +28,14 @@ export const onUpdateTask = /* GraphQL */ `
       id
       title
       sessions
-      remainingSession
+      remainingSessions
       longBreak
       shortBreak
       startDate
       startTime
       startAt
+      breakAt
+      remainingSeconds
       status
       createdAt
       updatedAt
@@ -44,12 +48,14 @@ export const onDeleteTask = /* GraphQL */ `
       id
       title
       sessions
-      remainingSession
+      remainingSessions
       longBreak
       shortBreak
       startDate
       startTime
       startAt
+      breakAt
+      remainingSeconds
       status
       createdAt
       updatedAt

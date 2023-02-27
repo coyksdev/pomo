@@ -11,7 +11,7 @@ import TimeCircle from '../../assets/svgs/Time-Circle.svg';
 
 import {AppBar} from '../components/AppBar';
 import {AppSlider} from '../components/AppSlider';
-import {DateTimePicker} from './DateTimePicker';
+import {DateTimePicker} from '../components/DateTimePicker';
 import {CreateTaskField, CreateTaskFieldSchema} from '../types';
 import {useCreateTask} from '../hooks/mutation';
 
@@ -25,12 +25,7 @@ function CreateTaskScreen() {
     setValue,
     formState: {errors},
   } = useForm<CreateTaskField>({
-    resolver: zodResolver(CreateTaskFieldSchema),
-    defaultValues: {
-      sessions: 1,
-      longBreak: 1,
-      shortBreak: 1,
-    },
+    resolver: zodResolver(CreateTaskFieldSchema)
   });
 
   const onSubmit = useCallback(

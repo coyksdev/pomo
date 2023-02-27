@@ -1,5 +1,9 @@
 enum TaskStatus {
   COMPLETED
+  RUNNING
+  PAUSED
+  BREAK
+  RUNNING_BREAK
   IN_PROGRESS
   NOT_STARTED
 }
@@ -7,12 +11,14 @@ enum TaskStatus {
 type Task @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String!
-  sessions: Int!
-  remainingSession: Int
-  longBreak: Int!
-  shortBreak: Int!
+  sessions: Int! @default(value: "1")
+  remainingSessions: Int!
+  longBreak: Int! @default(value: "1")
+  shortBreak: Int! @default(value: "1")
   startDate: AWSDateTime!
   startTime: AWSDateTime!
   startAt: AWSDateTime
-  status: TaskStatus
+  breakAt: AWSDateTime
+  remainingSeconds: Int
+  status: TaskStatus @default(value: "NOT_STARTED")
 }
