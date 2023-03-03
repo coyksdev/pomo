@@ -7,7 +7,7 @@ import { TouchableOpacity } from 'react-native';
 
 import { Task } from '../API'
 import { useTaskTimer } from '../hooks/useTaskTimer';
-import { TASK_DURATION_MINS } from '../constants';
+import { TASK_DURATION_SECS } from '../constants';
 
 type AppTimerProps = {
   task: Task
@@ -23,9 +23,10 @@ function TaskTimer({
     onPause,
     onPlay,
     onUndo,
-    timerKey
+    timerKey,
+    setRemainingSeconds,
   } = useTaskTimer(task);
-  
+
   return (
     <VStack flex={1} justifyContent={'center'} alignItems={'center'} space={20}>
       <CountdownCircleTimer
@@ -34,12 +35,12 @@ function TaskTimer({
         strokeWidth={20}
         initialRemainingTime={duration}
         isPlaying={isRunning}
-        duration={duration === 0 ? 0: TASK_DURATION_MINS}
+        duration={duration === 0 ? 0: TASK_DURATION_SECS}
         colors={['#1AB65C', '#246BFD', '#FF575C', '#FF575C']}
         colorsTime={[7, 5, 2, 0]}
+        onUpdate={(time) => setRemainingSeconds(time)}
         onComplete={() => {
-          onComplete();
-          return { shouldRepeat: false };
+          return onComplete();
         }}>
         {({remainingTime}) => {
           const minutes = Math.floor(remainingTime / 60);

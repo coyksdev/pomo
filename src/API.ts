@@ -15,16 +15,21 @@ export type CreateTaskInput = {
   breakAt?: string | null,
   remainingSeconds?: number | null,
   status?: TaskStatus | null,
+  timerStatus?: TimerStatus | null,
 };
 
 export enum TaskStatus {
+  NOT_STARTED = "NOT_STARTED",
+  IN_PROGRESS = "IN_PROGRESS",
+  BREAK = "BREAK",
   COMPLETED = "COMPLETED",
+}
+
+
+export enum TimerStatus {
   RUNNING = "RUNNING",
   PAUSED = "PAUSED",
-  BREAK = "BREAK",
-  RUNNING_BREAK = "RUNNING_BREAK",
-  IN_PROGRESS = "IN_PROGRESS",
-  NOT_STARTED = "NOT_STARTED",
+  IDLE = "IDLE",
 }
 
 
@@ -40,6 +45,7 @@ export type ModelTaskConditionInput = {
   breakAt?: ModelStringInput | null,
   remainingSeconds?: ModelIntInput | null,
   status?: ModelTaskStatusInput | null,
+  timerStatus?: ModelTimerStatusInput | null,
   and?: Array< ModelTaskConditionInput | null > | null,
   or?: Array< ModelTaskConditionInput | null > | null,
   not?: ModelTaskConditionInput | null,
@@ -102,6 +108,11 @@ export type ModelTaskStatusInput = {
   ne?: TaskStatus | null,
 };
 
+export type ModelTimerStatusInput = {
+  eq?: TimerStatus | null,
+  ne?: TimerStatus | null,
+};
+
 export type Task = {
   __typename: "Task",
   id: string,
@@ -116,6 +127,7 @@ export type Task = {
   breakAt?: string | null,
   remainingSeconds?: number | null,
   status?: TaskStatus | null,
+  timerStatus?: TimerStatus | null,
   createdAt: string,
   updatedAt: string,
 };
@@ -133,6 +145,7 @@ export type UpdateTaskInput = {
   breakAt?: string | null,
   remainingSeconds?: number | null,
   status?: TaskStatus | null,
+  timerStatus?: TimerStatus | null,
 };
 
 export type DeleteTaskInput = {
@@ -152,6 +165,7 @@ export type ModelTaskFilterInput = {
   breakAt?: ModelStringInput | null,
   remainingSeconds?: ModelIntInput | null,
   status?: ModelTaskStatusInput | null,
+  timerStatus?: ModelTimerStatusInput | null,
   and?: Array< ModelTaskFilterInput | null > | null,
   or?: Array< ModelTaskFilterInput | null > | null,
   not?: ModelTaskFilterInput | null,
@@ -192,6 +206,7 @@ export type ModelSubscriptionTaskFilterInput = {
   breakAt?: ModelSubscriptionStringInput | null,
   remainingSeconds?: ModelSubscriptionIntInput | null,
   status?: ModelSubscriptionStringInput | null,
+  timerStatus?: ModelSubscriptionStringInput | null,
   and?: Array< ModelSubscriptionTaskFilterInput | null > | null,
   or?: Array< ModelSubscriptionTaskFilterInput | null > | null,
 };
@@ -258,6 +273,7 @@ export type CreateTaskMutation = {
     breakAt?: string | null,
     remainingSeconds?: number | null,
     status?: TaskStatus | null,
+    timerStatus?: TimerStatus | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -283,6 +299,7 @@ export type UpdateTaskMutation = {
     breakAt?: string | null,
     remainingSeconds?: number | null,
     status?: TaskStatus | null,
+    timerStatus?: TimerStatus | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -308,6 +325,7 @@ export type DeleteTaskMutation = {
     breakAt?: string | null,
     remainingSeconds?: number | null,
     status?: TaskStatus | null,
+    timerStatus?: TimerStatus | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -332,6 +350,7 @@ export type GetTaskQuery = {
     breakAt?: string | null,
     remainingSeconds?: number | null,
     status?: TaskStatus | null,
+    timerStatus?: TimerStatus | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -360,6 +379,7 @@ export type ListTasksQuery = {
       breakAt?: string | null,
       remainingSeconds?: number | null,
       status?: TaskStatus | null,
+      timerStatus?: TimerStatus | null,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -386,6 +406,7 @@ export type OnCreateTaskSubscription = {
     breakAt?: string | null,
     remainingSeconds?: number | null,
     status?: TaskStatus | null,
+    timerStatus?: TimerStatus | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -410,6 +431,7 @@ export type OnUpdateTaskSubscription = {
     breakAt?: string | null,
     remainingSeconds?: number | null,
     status?: TaskStatus | null,
+    timerStatus?: TimerStatus | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -434,6 +456,7 @@ export type OnDeleteTaskSubscription = {
     breakAt?: string | null,
     remainingSeconds?: number | null,
     status?: TaskStatus | null,
+    timerStatus?: TimerStatus | null,
     createdAt: string,
     updatedAt: string,
   } | null,

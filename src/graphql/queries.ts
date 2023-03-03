@@ -17,6 +17,7 @@ export const getTask = /* GraphQL */ `
       breakAt
       remainingSeconds
       status
+      timerStatus
       createdAt
       updatedAt
     }
@@ -42,6 +43,7 @@ export const listTasks = /* GraphQL */ `
         breakAt
         remainingSeconds
         status
+        timerStatus
         createdAt
         updatedAt
       }

@@ -62,6 +62,7 @@ function CreateTaskScreen() {
                 return (
                   <VStack space={2}>
                     <Input
+                      fontSize={18}
                       placeholder="Task title"
                       borderRadius={12}
                       bgColor={'gray.50'}

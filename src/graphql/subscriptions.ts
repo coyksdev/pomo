@@ -17,6 +17,7 @@ export const onCreateTask = /* GraphQL */ `
       breakAt
       remainingSeconds
       status
+      timerStatus
       createdAt
       updatedAt
     }
@@ -37,6 +38,7 @@ export const onUpdateTask = /* GraphQL */ `
       breakAt
       remainingSeconds
       status
+      timerStatus
       createdAt
       updatedAt
     }
@@ -57,6 +59,7 @@ export const onDeleteTask = /* GraphQL */ `
       breakAt
       remainingSeconds
       status
+      timerStatus
       createdAt
       updatedAt
     }

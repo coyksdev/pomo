@@ -42,6 +42,7 @@ function DateTimePicker({
         return (
           <>
             <Input
+              fontSize={18}
               editable={false}
               placeholder={placeholder}
               borderRadius={12}

@@ -1,11 +1,14 @@
 enum TaskStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  BREAK
   COMPLETED
+}
+
+enum TimerStatus {
   RUNNING
   PAUSED
-  BREAK
-  RUNNING_BREAK
-  IN_PROGRESS
-  NOT_STARTED
+  IDLE
 }
 
 type Task @model @auth(rules: [{allow: public}]) {
@@ -21,4 +24,5 @@ type Task @model @auth(rules: [{allow: public}]) {
   breakAt: AWSDateTime
   remainingSeconds: Int
   status: TaskStatus @default(value: "NOT_STARTED")
+  timerStatus: TimerStatus @default(value: "IDLE")
 }

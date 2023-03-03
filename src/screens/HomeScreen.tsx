@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {VStack, Box, Text, HStack} from 'native-base';
 import CircularProgress from 'react-native-circular-progress-indicator';
 
@@ -13,10 +13,15 @@ import NotificationCurved from '../../assets/svgs/Notification-Curved.svg';
 function HomeScreen() {
   const {data} = useTasks();
 
-  const completionPercentage =
-    data?.reduce((acc, task) => {
+  const completedCount = useMemo(() => {
+    return data?.reduce((acc, task) => {
       return acc + (task?.status === TaskStatus.COMPLETED ? 1 : 0);
-    }, 0) ?? 0 / (data?.length ?? 1);
+    }, 0);
+  }, [data]);
+  
+  const totalTasks = data?.length ?? 0;
+
+  const completionPercentage = (completedCount / totalTasks) * 100;
 
   let completionPercentageTextLabel = '';
 
@@ -33,13 +38,7 @@ function HomeScreen() {
     completionPercentageTextLabel =
       'Congratulations! You have completed all your tasks for today!';
   }
-
-  const completedCount = data?.reduce((acc, task) => {
-    return acc + (task?.status === TaskStatus.COMPLETED ? 1 : 0);
-  }, 0);
-
-  const totalTasks = data?.length ?? 0;
-
+  
   return (
     <VStack flex={1}>
       <AppBar

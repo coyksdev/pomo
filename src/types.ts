@@ -1,5 +1,5 @@
 import {z} from 'zod';
-import { TaskStatus } from './API';
+import { TaskStatus, TimerStatus } from './API';
 
 export type CreateTaskField = {
   title: string;
@@ -16,7 +16,8 @@ export type UpdateTaskField = {
   breakAt?: Date;
   remainingSessions?: number;
   remainingSeconds?: number;
-  status?: TaskStatus
+  status?: TaskStatus;
+  timerStatus?: TimerStatus;
 };
 
 export const CreateTaskFieldSchema = z.object({
